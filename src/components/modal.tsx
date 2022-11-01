@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 
 import { ModalProps } from '../types'
 
+import ItemError from './itemError'
+
 const Modal = forwardRef(function Modal ({ onClose, addTodoList, controls, onRepeatItem }: ModalProps,
   ref: Ref<HTMLDialogElement>) {
   const [item, setItem] = useState('')
@@ -43,16 +45,7 @@ const Modal = forwardRef(function Modal ({ onClose, addTodoList, controls, onRep
       className='border border-slate-200 rounded w-full mx-auto block outline-none p-2'
       />
 
-      {repeatItemError && (
-        <div className='mt-10 bg-red-50/70 rounded-md text-red-400 p-2 px-4 text-center w-max mx-auto flex items-center gap-2'>
-          <svg xmlns="http://www.w3.org/2000/svg" className='w-5 h-5 stroke-rose-500 fill-none' viewBox="0 0 24 24" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M12 9v2m0 4v.01" />
-          <path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" />
-        </svg>
-          <small>Ya tienes esto en tu lista!</small>
-        </div>)
-        }
+      {repeatItemError && <ItemError /> }
 
      <div className='mt-10 flex gap-6 justify-between w-3/4 mx-auto'>
       <button

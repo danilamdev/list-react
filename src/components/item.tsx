@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 
 import DeleteIcon from './deleteIcon'
-import { Todoitem } from './Todo'
+import { Todoitem } from '../types'
 
 interface ItemProps {
   todo: Todoitem
