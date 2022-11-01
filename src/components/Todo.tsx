@@ -34,7 +34,7 @@ export default function Todo (): JSX.Element {
   const handleClick: () => Promise<void> = async () => {
     openModal(modalRef)
     controls.set({ opacity: 0, scale: 0 })
-    await controls.start({ opacity: 1, scale: 1, transition: { duration: 0.4, type: 'spring', bounce: 0.4 } })
+    await controls.start({ opacity: 1, scale: 1, transition: { duration: 0.2, type: 'spring', bounce: 0.4 } })
   }
 
   const handleRepeatItem = (newItem: Todoitem['text']): Boolean => {

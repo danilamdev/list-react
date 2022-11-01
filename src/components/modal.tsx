@@ -58,7 +58,6 @@ const Modal = forwardRef(function Modal ({ onClose, addTodoList, controls, onRep
         onClick={() => {
           onClose()
           setItem('')
-          if (repeatItemError) return
           setRepeatItemError(false)
         }}
         >cancel
